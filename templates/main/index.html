@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">{{name}}</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="{{linkedin}}">LinkedIn</a></li>
+          <li><a href="{{github}}">GitHub</a></li>
+          <li><a href="{{instagram}}">Instagram</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="collapsible">
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">account_circle</i>
+          Email
+          <span class="badge">{{email}}</span></div>
+
+        </div>
+        <div class="collapsible-body"><p>{{email}}</p></div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">place</i>
+          Address
+          <span class="badge">{{address}}</span></div>
+
+        </div>
+        <div class="collapsible-body"><p>{{address}}</p></div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">call</i>
+          Mobile
+          <span class="badge">{{mobile}}</span></div>
+        </div>
+        <div class="collapsible-body"><p>{{mobile}}</p></div>
+      </li>
+    </ul>
+    <div class="row">
+        <h3><div class="col s12"><i class="material-icons">school</i> Education </div></h3> 
+        <br>
+        <div class="col s6" style="margin-top: 20px ; font-size: 20px;"> {{education.0}}</div>
+        <div class="col s6"style="margin-top: 20px ;font-size: 20px;">{{education.1}}</div>
+    </div>
+
+    <ul class="collection with-header">
+        <li class="collection-header"><h4>Skills</h4></li>
+        {% for language in skills %}
+        <li class="collection-item">{{language}}</li>
+        {% endfor %}
+    </ul>
+    <ul class="collection with-header">
+        <li class="collection-header"><h4>Projects</h4></li>
+        {% for link in projectlinks %}
+        <li class="collection-item"><div>{{link}}<a href="{{link}}" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+        {% endfor %}
+      </ul>
+
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>Languages</h4></li>
+        {% for la in languages %}
+        <li class="collection-item">{{la}}</li>
+        {% endfor %}
+    </ul>
+
+    <ul class="collection with-header">
+        <li class="collection-header"><h4>Interests</h4></li>
+        {% for interest in interests %}
+        <li class="collection-item">{{interest}}</li>
+        {% endfor %}
+    </ul>
+
+  </body>
+</html>
